@@ -14,7 +14,7 @@ export const config = {
 /**
  * Where sign-ups are sent. Set PUBLIC_FORM_ENDPOINT in a .env file (or in your
  * host's environment settings) to your Google Apps Script web app URL; see
- * integrations/google-sheets/README.md. Any service that accepts a form POST
+ * docs/SETUP.md, part 2. Any service that accepts a form POST
  * and returns 2xx also works (Formspree, Basin).
  *
  * While it is not set:

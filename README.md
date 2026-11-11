@@ -6,6 +6,10 @@ households want to try it.
 
 Astro 5 + Tailwind CSS 4. Static output, no backend.
 
+> **New here?** Start with the [one-pager](docs/ONE-PAGER.md) for what this is
+> and where it stands, then follow the [setup runbook](docs/SETUP.md) to
+> connect the Google Sheet, put the site online and launch.
+
 ## Run it
 
 ```bash
@@ -26,8 +30,8 @@ to `true` once a specific offer is locked in (a free 2 kg trial pack for the
 first 100 households) and the whole page switches to that wording.
 
 **Where sign-ups go: `PUBLIC_FORM_ENDPOINT`.** Sign-ups are collected in a
-Google Sheet you own. Follow [`integrations/google-sheets/README.md`](integrations/google-sheets/README.md)
-(about five minutes), then put the web app URL in a `.env` file:
+Google Sheet you own. Follow [docs/SETUP.md, part 2](docs/SETUP.md#2-collect-sample-requests-in-a-google-sheet)
+(about ten minutes), then put the web app URL in a `.env` file:
 
 ```
 PUBLIC_FORM_ENDPOINT=https://script.google.com/macros/s/…/exec
@@ -90,6 +94,8 @@ The `Imgaes/` drop folder and all `*.pdf` files are gitignored. **This repositor
 is public**, and the planning PDFs contain margins and budget figures.
 
 ## Before launch
+
+The full checklist is in [docs/SETUP.md, part 5](docs/SETUP.md#5-before-you-share-the-link). In short:
 
 1. Connect the Google Sheet, set `PUBLIC_FORM_ENDPOINT`, and send a real test sign-up.
 2. Decide `trialConfirmed`.
