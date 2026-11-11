@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import { img } from "../data/images";
+import { cta } from "../data/site";
+import CtaButton from "./CtaButton.astro";
+---
+
+<section id="final-cta" class="bg-ivory px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div data-reveal class="on-dark mx-auto grid max-w-7xl overflow-hidden rounded-[2.25rem] bg-forest text-ivory shadow-hero lg:grid-cols-2 lg:rounded-[3rem]" style="--em: var(--color-leaf)">
+    <div class="flex flex-col justify-center p-8 sm:p-12 lg:order-1 lg:p-16">
+      <h2 class="display h-section text-balance text-ivory">
+        Keep your rotis.<br /><em>Leave the atta to&nbsp;us.</em>
+      </h2>
+      <p class="mt-6 max-w-md text-lg leading-relaxed text-ivory/80">
+        Fresh, stone-ground and milled to order in Melbourne. Request a free sample and taste the difference in your own rotis.
+      </p>
+      <div class="mt-9 flex flex-col items-start gap-4">
+        <CtaButton />
+        <p class="text-sm font-semibold text-ivory/70">{cta.reassure}</p>
+      </div>
+    </div>
+    <div class="reveal-img relative order-first min-h-[18rem] sm:min-h-[24rem] lg:order-2 lg:min-h-full">
+      <Image src={img.chapatiStack} alt="A tall stack of fresh chapatis on a plate beside a small bowl of ghee" widths={[600, 900, 1024]} sizes="(min-width: 1024px) 50vw, 100vw" class="absolute inset-0 h-full w-full object-cover" />
+    </div>
+  </div>
+</section>

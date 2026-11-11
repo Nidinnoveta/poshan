@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import { img } from "../data/images";
+import CtaButton from "./CtaButton.astro";
+import { cta } from "../data/site";
+
+const links = [
+  { href: "#concern", label: "Why it matters" },
+  { href: "#safety", label: "Food safety" },
+  { href: "#blends", label: "The range" },
+  { href: "#how", label: "How it works" },
+  { href: "#faq", label: "FAQs" },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-line/70 bg-ivory/85 backdrop-blur-md">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8" aria-label="Main">
+    <a href="#top" class="shrink-0 rounded-lg focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-forest" aria-label="Poshan, back to top">
+      <Image src={img.logoWordmark} alt="" widths={[160, 320]} sizes="150px" class="h-8 w-auto sm:h-9" loading="eager" />
+    </a>
+
+    <ul class="hidden items-center gap-7 text-[0.94rem] font-semibold text-ink-soft xl:flex">
+      {links.map((l) => (
+        <li><a href={l.href} class="transition-colors hover:text-forest">{l.label}</a></li>
+      ))}
+    </ul>
+
+    <CtaButton size="sm" label={cta.nav} />
+  </nav>
+</header>

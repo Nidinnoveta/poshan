@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import { img } from "../data/images";
+
+const failingFoodUrl =
+  "https://www.agriculture.gov.au/biosecurity-trade/import/goods/food/inspection-testing/failing-food-reports";
+---
+
+<section id="safety" class="on-dark relative overflow-hidden bg-charcoal text-ivory" style="--em: var(--color-terracotta-300)">
+  <div aria-hidden="true" class="pointer-events-none absolute top-1/3 left-1/2 h-[44rem] w-[60rem] -translate-x-1/2 rounded-full bg-terracotta/10 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+    <!-- Centred heading -->
+    <div class="mx-auto max-w-3xl text-center">
+      <p data-reveal class="eyebrow justify-center text-terracotta-300">Food safety</p>
+      <h2 data-reveal style="--d: 80ms" class="display h-section mt-5 text-balance text-ivory">
+        What you can't see in your food <em>still matters.</em>
+      </h2>
+      <p data-reveal style="--d: 160ms" class="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-pretty text-ivory/75">
+        Most atta is perfectly fine. But a fine white powder gives nothing away.
+        Not how old it is, how it was stored, or what else might have found its
+        way in along the journey.
+      </p>
+    </div>
+
+    <!-- The image, large and centred -->
+    <figure class="reveal-img mx-auto mt-14 aspect-[3/2] max-w-6xl rounded-[1.75rem] shadow-2xl ring-1 ring-white/10 lg:mt-16 lg:rounded-[2.75rem]">
+      <Image
+        src={img.adulterationRisk}
+        alt="Infographic: What could be in your atta, beyond just wheat? Common adulteration risks can include added fillers such as maida or starch to increase volume, synthetic whiteners, preservatives to extend shelf life, and other contaminants such as dust or foreign particles."
+        widths={[640, 1000, 1400, 1536]}
+        sizes="(min-width: 1200px) 72rem, 100vw"
+        class="h-full w-full object-cover"
+      />
+    </figure>
+
+    <!-- Evidence cards, under the image and lifting over its edge on desktop -->
+    <div class="relative z-10 mx-auto mt-5 grid max-w-6xl gap-5 md:grid-cols-3 lg:-mt-20 lg:px-8">
+      <div data-reveal class="rounded-[1.75rem] bg-[#2b342b] p-7 shadow-2xl ring-1 ring-white/10">
+        <p class="text-sm font-bold text-terracotta-300">Stopped at the Australian border</p>
+        <div class="mt-4 grid grid-cols-2 gap-4">
+          <div>
+            <p class="font-display text-[2.6rem] leading-none font-extrabold tracking-tight text-ivory">5.5×</p>
+            <p class="mt-2 text-sm leading-snug text-ivory/70">the lead limit, in imported atta</p>
+          </div>
+          <div>
+            <p class="font-display text-[2.6rem] leading-none font-extrabold tracking-tight text-ivory">37×</p>
+            <p class="mt-2 text-sm leading-snug text-ivory/70">the arsenic limit, in imported wheat flour</p>
+          </div>
+        </div>
+        <p class="mt-5 text-xs leading-relaxed text-ivory/50">
+          Individual shipments tested and rejected at the border, not a survey of
+          what's on the shelf. Source:
+          <a href={failingFoodUrl} target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-ivory">Department of Agriculture, Failing Food Reports</a>.
+        </p>
+      </div>
+
+      <div data-reveal style="--d: 110ms" class="rounded-[1.75rem] bg-[#2b342b] p-7 shadow-2xl ring-1 ring-white/10">
+        <p class="text-sm font-bold text-terracotta-300">Adulteration</p>
+        <h3 class="mt-3 font-display text-2xl leading-tight font-extrabold text-ivory">A real food-safety risk</h3>
+        <p class="mt-2.5 leading-relaxed text-ivory/70">
+          Food regulators overseas have seized flour bulked out with cheap fillers
+          and mineral powders. It's illegal and uncommon, and almost impossible to
+          spot at home.
+        </p>
+      </div>
+
+      <div data-reveal style="--d: 220ms" class="rounded-[1.75rem] bg-[#2b342b] p-7 shadow-2xl ring-1 ring-white/10">
+        <p class="text-sm font-bold text-terracotta-300">Storage</p>
+        <h3 class="mt-3 font-display text-2xl leading-tight font-extrabold text-ivory">Time changes flour</h3>
+        <p class="mt-2.5 leading-relaxed text-ivory/70">
+          Grain and flour kept too long, or somewhere warm and damp, can attract
+          moulds and pantry pests. The longer the wait, the bigger the risk.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pivot: concern to reassurance -->
+    <div data-reveal class="mx-auto mt-14 flex max-w-6xl flex-col items-start justify-between gap-6 rounded-[2rem] bg-leaf p-8 text-forest-900 sm:flex-row sm:items-center lg:mt-16 lg:p-10">
+      <p class="max-w-2xl font-display text-2xl leading-snug font-extrabold tracking-tight text-balance sm:text-3xl">
+        The answer isn't worry. It's knowing exactly where your atta comes from.
+      </p>
+      <a href="#difference" class="link-arrow shrink-0 text-forest-900 decoration-forest-900/40">
+        See how we do it
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4v12M5.5 11.5 10 16l4.5-4.5" /></svg>
+      </a>
+    </div>
+  </div>
+</section>

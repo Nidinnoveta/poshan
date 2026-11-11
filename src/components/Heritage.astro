@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import { img } from "../data/images";
+---
+
+<section class="reveal-img relative isolate flex min-h-[34rem] items-end overflow-hidden lg:min-h-[44rem] lg:items-center" aria-label="Same rotis, better atta">
+  <Image
+    src={img.rollingChapati}
+    alt="Weathered hands rolling out a chapati with a wooden belan on a marble counter"
+    widths={[800, 1280, 1800]}
+    sizes="100vw"
+    class="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_50%]"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-charcoal/90 via-charcoal/45 to-charcoal/10 lg:bg-gradient-to-r lg:from-charcoal/90 lg:via-charcoal/55 lg:to-transparent"></div>
+
+  <div class="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8" style="--em: var(--color-leaf)">
+    <div class="max-w-xl">
+      <p data-reveal class="eyebrow text-leaf">Nothing to relearn</p>
+      <h2 data-reveal style="--d: 80ms" class="display h-section mt-5 text-ivory">
+        The same rotis.<br /><em>Better atta.</em>
+      </h2>
+      <p data-reveal style="--d: 160ms" class="mt-6 text-lg leading-relaxed text-ivory/85">
+        No new recipes. No new habits. Just the roti your family already loves,
+        made with flour that was still whole grain last week.
+      </p>
+    </div>
+  </div>
+</section>

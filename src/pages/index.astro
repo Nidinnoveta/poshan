@@ -1,0 +1,46 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Concern from "../components/Concern.astro";
+import Safety from "../components/Safety.astro";
+import Difference from "../components/Difference.astro";
+import Heritage from "../components/Heritage.astro";
+import Range from "../components/Range.astro";
+import Process from "../components/Process.astro";
+import Founding from "../components/Founding.astro";
+import GoalPicker from "../components/GoalPicker.astro";
+import Faq from "../components/Faq.astro";
+import FinalCta from "../components/FinalCta.astro";
+import Footer from "../components/Footer.astro";
+import SignupModal from "../components/SignupModal.astro";
+import StickyCta from "../components/StickyCta.astro";
+import { site, faqs } from "../data/site";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+---
+
+<Base title="Poshan | Fresh chakki atta, just like back home" description={site.description}>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Concern />
+    <Safety />
+    <Difference />
+    <Heritage />
+    <Range />
+    <Process />
+    <Founding />
+    <GoalPicker />
+    <Faq />
+    <FinalCta />
+  </main>
+  <Footer />
+  <StickyCta />
+  <SignupModal />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
+</Base>

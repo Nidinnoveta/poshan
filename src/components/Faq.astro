@@ -1,0 +1,30 @@
+---
+import { faqs } from "../data/site";
+---
+
+<section id="faq" class="bg-lime">
+  <div class="mx-auto grid max-w-7xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:py-32">
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-28">
+        <p data-reveal class="eyebrow text-forest">Questions</p>
+        <h2 data-reveal style="--d: 80ms" class="display h-section mt-5 text-charcoal">
+          Good questions. <em>Honest answers.</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="faq divide-y divide-forest/15 border-y border-forest/15 lg:col-span-8">
+      {faqs.map((f, i) => (
+        <details data-reveal style={`--d: ${i * 60}ms`} class="group">
+          <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 text-left focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-forest">
+            <span class="font-display text-xl leading-snug font-extrabold text-charcoal sm:text-2xl">{f.q}</span>
+            <span class="faq-icon grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ivory text-forest transition-colors group-hover:bg-leaf" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M10 4v12M4 10h12" /></svg>
+            </span>
+          </summary>
+          <p class="faq-body max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

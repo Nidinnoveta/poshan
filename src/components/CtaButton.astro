@@ -1,0 +1,27 @@
+---
+import { cta } from "../data/site";
+
+interface Props {
+  label?: string;
+  size?: "sm" | "md" | "lg";
+  goal?: string;
+  blend?: string;
+  variant?: "primary" | "ghost";
+  class?: string;
+}
+const { label = cta.primary, size = "lg", goal, blend, variant = "primary", class: cls = "" } = Astro.props;
+---
+
+<button
+  type="button"
+  class={`btn btn-${variant} btn-${size} ${cls}`}
+  data-open-signup
+  data-goal={goal}
+  data-blend={blend}
+  aria-haspopup="dialog"
+>
+  <span>{label}</span>
+  <svg class="arrow h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 10h11M11 5.5 15.5 10 11 14.5" />
+  </svg>
+</button>
